@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Naval Command & Control System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===============================
+     LOADER
+================================ -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="spinner"></div>
+        <h2>Naval Command System</h2>
+        <p>Initializing safety monitoring...</p>
+    </div>
+</div>
+
+<!-- ===============================
+     MAIN APP
+================================ -->
+<div id="app" style="display:none;">
+
+<header>
+    <h1>🚢 Naval Command & Control System</h1>
+    <p>Real-Time Safety Monitoring</p>
+
+    <p id="roleLabel" style="opacity:0.8; font-size:14px;">
+        Current Role: Operator
+    </p>
+
+    <div id="roleSwitch">
+        <button onclick="setRole('commander')">👨‍✈️ Commander View</button>
+        <button onclick="setRole('operator')">🧑‍💻 Operator View</button>
+    </div>
+</header>
+
+<!-- ===============================
+     OFFLINE BANNER
+================================ -->
+<div id="offlineBanner" style="display:none;">
+    ⚠️ OFFLINE MODE — Showing Last Known Status
+</div>
+
+<!-- ===============================
+     STATUS
+================================ -->
+<section id="statusSection">
+    <div id="statusIndicator" class="safe">
+        <h2 id="statusText">SYSTEM SAFE</h2>
+        <span id="severityBadge" class="severity low">LOW</span>
+    </div>
+</section>
+
+<!-- ===============================
+     INFO PANELS
+================================ -->
+<section class="infoPanel">
+    <div class="infoBox">
+        <h3>Incident</h3>
+        <p id="message">No active incident</p>
+    </div>
+
+    <div class="infoBox">
+        <h3>Time</h3>
+        <p id="time">--</p>
+    </div>
+
+    <div class="infoBox">
+        <h3>Location</h3>
+        <p id="location">--</p>
+    </div>
+</section>
+
+<!-- ===============================
+     ACK BUTTON (IMPORTANT)
+================================ -->
+<section id="ackSection" class="operatorOnly">
+    <button
+        id="ackButton"
+        onclick="acknowledgeAlert()"
+        style="cursor:not-allowed;"
+    >
+        ACKNOWLEDGE INCIDENT
+    </button>
+</section>
+
+<!-- ===============================
+     STATS
+================================ -->
+<section class="statsPanel">
+    <div class="statBox">
+        <h3>Total Incidents</h3>
+        <p id="statTotal">0</p>
+    </div>
+
+    <div class="statBox">
+        <h3>Last 24 Hours</h3>
+        <p id="stat24">0</p>
+    </div>
+
+    <div class="statBox">
+        <h3>Today</h3>
+        <p id="statToday">0</p>
+    </div>
+</section>
+
+<!-- ===============================
+     FOOTER
+================================ -->
+<footer>
+    <a href="history.html">📜 View Incident History</a>
+</footer>
+
+</div>
+
+<!-- ===============================
+     SCRIPT
+================================ -->
+<script src="script.js"></script>
+
+</body>
+</html>
